@@ -5,9 +5,7 @@ import { AtlasEnvironment } from "atlas-ide";
 
 async function main(atlas: AtlasEnvironment) {
     const provider = new ethers.providers.Web3Provider(atlas.provider);
-    if((await provider.getNetwork()).chainId !== 5){
-      throw new Error("Must be connected to Goerli within Atlas");
-    }
+
     const signer = provider.getSigner();
     console.log("Connected signer", await signer.getAddress());
 
