@@ -11,7 +11,7 @@ const GOV_CONTRACT = "<GOV_CONTRACT>";
 async function main(atlas: AtlasEnvironment) {
     const provider = new zksync.Web3Provider(atlas.provider);
     const connectedChainID = (await provider.getNetwork()).chainId;
-    if(connectedChainID !== 280 && connectedChainID !== 324) {
+    if(connectedChainID !== 300 && connectedChainID !== 324) {
         throw new Error("Must be connected to zkSync within Atlas");
     }
     const signer = provider.getSigner();
