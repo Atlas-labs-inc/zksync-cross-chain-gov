@@ -13,9 +13,6 @@ const COUNTER_ADDRESS = '<COUNTER_CONTRACT>';
 async function main(atlas: AtlasEnvironment) {
   // Enter your Ethereum L1 provider RPC URL.
   const l1Provider = new ethers.providers.Web3Provider(atlas.provider);
-  if((await l1Provider.getNetwork()).chainId !== 5){
-    throw new Error("Must be connected to Goerli within Atlas");
-  }
   // Set a constant that accesses the Layer 1 contract.
   const wallet = l1Provider.getSigner();
   console.log("Using wallet", await wallet.getAddress());
